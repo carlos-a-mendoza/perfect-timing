@@ -12,6 +12,14 @@
 /build
 
 # misc
+
+reportWebVitals.js
+setUpTests.js
+*.css
+*.css.map
+.env
+index.css
+
 .DS_Store
 .env.local
 .env.development.local
