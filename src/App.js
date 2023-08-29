@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Header/>
+        {/* <Header/> */}
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/my-calendar" element={<CalendarPage/>}/>

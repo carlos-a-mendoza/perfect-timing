@@ -1,0 +1,33 @@
+@import '../../styles/partials/variables';
+@import '../../styles//partials//mixins';
+
+button {}
+
+
+
+
+.css-4pax7l-MuiPickersLayout-root .MuiPickersLayout-toolbar, .MuiPickersLayout-actionBar, .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+    display: none;
+}
+
+
+
+.css-nk89i7-MuiPickersCalendarHeader-root {
+    background-color: $primary-color1;
+    color: white;
+    margin-bottom: 0;
+    justify-content: center;
+}
+
+.css-i5q14k-MuiDayCalendar-header {
+    background-color: $primary-color2;
+}
+
+.css-12p2adl-MuiDayCalendar-monthContainer {
+    border: 1px solid $primary-color2;
+}
+
+.css-kg9q0s-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+    // display: none;
+    // visibility: hidden;
+}

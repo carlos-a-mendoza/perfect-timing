@@ -1,0 +1,43 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/typography";
+
+.add-event{
+    margin-left:1rem;
+    margin-right: 1rem;
+
+    &__close{
+        // justify-self: flex-end;
+        margin-left: auto;
+    }
+
+    &__container{
+
+        &--button{
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &--header{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__button{
+        border-radius: 12px;
+        border: 1px solid $primary-color1;
+        width: 10rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 0.875rem;
+        background-color: $primary-color1;
+        color: white;
+    }
+}
+
+//this is to edit the event date
+// .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+//     height: 2rem;
+// } 
