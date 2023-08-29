@@ -1,16 +1,17 @@
 @import '../../styles/partials/variables';
 @import '../../styles//partials//mixins';
 
-button {}
 
 
 
+
+.css-qa7bje-MuiButtonBase-root-MuiPickersDay-root:focus.Mui-selected{
+        background-color: $primary-color3;
+}
 
 .css-4pax7l-MuiPickersLayout-root .MuiPickersLayout-toolbar, .MuiPickersLayout-actionBar, .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
     display: none;
 }
-
-
 
 .css-nk89i7-MuiPickersCalendarHeader-root {
     background-color: $primary-color1;

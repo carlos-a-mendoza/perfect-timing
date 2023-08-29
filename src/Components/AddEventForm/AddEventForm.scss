@@ -3,18 +3,38 @@
 @import "../../styles/partials/typography";
 
 .add-event{
+    font-family: 'EduFoundation';
     margin-left:1rem;
     margin-right: 1rem;
 
     &__close{
-        // justify-self: flex-end;
-        margin-left: auto;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+        
     }
 
     &__container{
+        background-color: $supporting-color1;
+        height: 35rem;
+        width: 20rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        border-radius: 4px;
+
+        &--background{
+            position: relative;
+            background-color:  rgba(19,24,44,0.4);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         &--button{
-            padding-top: 1rem;
+            padding-top: 2rem;
             display: flex;
             justify-content: space-between;
         }
@@ -22,7 +42,51 @@
         &--header{
             display: flex;
             flex-direction: column;
+            background-color: $primary-color1;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            position: relative;
         }
+
+        &--content{
+            padding-top: 2rem;
+            border: 1px solid $primary-color1;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+    }
+
+    &__header{
+        font-size: 2.2rem;
+        text-align: center;
+        margin: 0;
+        color: $supporting-color1;
+    }
+
+    &__label{
+        font-size: 1.3rem;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        &--category{
+            margin-top: 1rem;
+        }
+
+        &--date{
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__input{
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        width: 96%;
+        padding-top: 0.25rem;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
     }
 
     &__button{
@@ -33,10 +97,15 @@
         padding-bottom: 0.5rem;
         font-size: 0.875rem;
         background-color: $primary-color1;
-        color: white;
+        color: $supporting-color1;
+        font-weight: 550;
+        // letter-spacing: 0.1rem;
     }
 }
 
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    margin-bottom: 1rem;
+}
 //this is to edit the event date
 // .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
 //     height: 2rem;

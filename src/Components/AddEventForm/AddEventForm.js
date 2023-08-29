@@ -15,7 +15,8 @@ export default function AddEventForm() {
 
     const handleCancel = (event) => {
         event.preventDefault();
-        navigate("/my-calendar")
+        window.location.reload();
+        // navigate("/my-calendar")
 
     }
 
@@ -29,28 +30,28 @@ export default function AddEventForm() {
 
     return (
         <div className="add-event">
-            <div className="add-event__container-background">
+            <div className="add-event__container--background">
                 <article className="add-event__container">
                     <div className="add-event__container--header">
                         <a href="/my-calendar" className="add-event__close"><img src={close} alt="X symbol to close"/></a>
                         <h1 className="add-event__header">Add Event</h1>
                     </div>
-                    <div>
+                    <div className="add-event__container--content">
                         <h2 className="add-event__label">Event Name</h2>
                         <input type="text" name="event_name" className="add-event__input"></input>
 
                         <h2 className="add-event__label">Description</h2>
                         <input type="text" name="event_description" className="add-event__input"></input>
 
-                        <h2 className="add-event__label">Date:</h2>
+                        <h2 className="add-event__label add-event__label--date">Date:</h2>
                         <LocalizationProvider dateAdapter={AdapterDayjs} className="add-event__date">
                             <DatePicker value={value} onChange={(newValue) => setValue(newValue)} />
                         </LocalizationProvider>
 
-                        <h2 className="add-event__label">Category:</h2>
+                        <h2 className="add-event__label add-event__label--category">Category:</h2>
                         <input type="text" name="event_category" className="add-event__input"></input>
-
                     </div>
+
                     <div className="add-event__container--button">
                         <button onClick={handleCancel} className="add-event__button">Cancel</button>
                         <button onClick={handleSubmit} className="add-event__button">Update Schedule</button>
