@@ -1,12 +1,29 @@
-@import '../../styles/partials/variables';
-@import '../../styles//partials//mixins';
+@import "../../styles/partials/variables";
+@import "../../styles/partials/typography";
+@import "../../styles/partials/mixins";
 
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+.css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel{
+    color: $supporting-color1 !important;
+    font-weight: 600 !important;
+}
 
+.css-cwhad8-MuiDateCalendar-root{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
 
+.css-16b5y55-MuiPickersLayout-contentWrapper{
+    margin: 0;
+}
 
 .css-qa7bje-MuiButtonBase-root-MuiPickersDay-root:focus.Mui-selected{
-        background-color: $primary-color3;
+    background-color: $primary-color3;
 }
 
 .css-4pax7l-MuiPickersLayout-root .MuiPickersLayout-toolbar, .MuiPickersLayout-actionBar, .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
@@ -16,7 +33,7 @@
 .css-nk89i7-MuiPickersCalendarHeader-root {
     background-color: $primary-color1;
     color: white;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
     justify-content: center;
 }
 
@@ -28,7 +45,6 @@
     border: 1px solid $primary-color2;
 }
 
-.css-kg9q0s-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
-    // display: none;
-    // visibility: hidden;
+.css-4pax7l-MuiPickersLayout-root .MuiPickersLayout-actionBar{
+    display: none;
 }

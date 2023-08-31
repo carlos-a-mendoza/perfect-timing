@@ -2,10 +2,15 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/typography";
 
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .add-event{
     font-family: 'EduFoundation';
-    margin-left:1rem;
-    margin-right: 1rem;
 
     &__close{
         position: absolute;
@@ -22,6 +27,8 @@
         padding-right: 1rem;
         padding-top: 1rem;
         border-radius: 4px;
+        padding-bottom: 0.5rem;
+        position: absolute;
 
         &--background{
             position: relative;

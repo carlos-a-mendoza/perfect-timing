@@ -4,16 +4,18 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import CalendarPage from "./pages/CalendarPage/CalendarPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import EventsPage from "./pages/EventsPage/EventsPage";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        {/* <Header/> */}
+        <Header/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/my-calendar" element={<CalendarPage/>}/>
           <Route path="/my-profile" element={<ProfilePage/>}/>
+          <Route path="/my-events" element={<EventsPage/>}/>
         </Routes>
       </BrowserRouter>
     </div>

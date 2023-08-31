@@ -1,0 +1,44 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/typography";
+
+.header{
+    font-family: "EduFoundation";
+    background-color: $primary-color1;
+
+    &__container{
+        display: flex;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        color: $supporting-color1;
+        font-size: 1.1rem;;
+        font-weight: 700;
+    }
+    
+    &__link{
+
+        &:focus{
+            color: $supporting-color1;
+        }
+
+        &:visited{
+            color: $supporting-color1;
+        }
+
+        &:active{
+            color: $supporting-color1;
+        }
+
+        &:hover{
+            color: $primary-color5;
+        }
+
+    }
+}
