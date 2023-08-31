@@ -62,7 +62,7 @@ export default function AddEventForm() {
                 .post("http://localhost:8080/", newEvent)
                 .then((response) =>{
                     if(response.status === 201)
-                    setTimeout(()=>{navigate(`/`)}, 2000);
+                    setTimeout(()=>{navigate(`/my-calendar`)}, 2000);
                      return;
                 })
                 .catch((error)=>{
