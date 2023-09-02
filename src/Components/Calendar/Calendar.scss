@@ -8,6 +8,29 @@ body{
     padding: 0;
 }
 
+.calendar{
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    &__button{
+        border-radius: 12px;
+        border: 1px solid $primary-color3;
+        width: 10rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 0.875rem;
+        background-color: $primary-color3;
+        color: $supporting-color1;
+        font-weight: 550;
+
+    }
+}
+
 .css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel{
     color: $supporting-color1 !important;
     font-weight: 600 !important;

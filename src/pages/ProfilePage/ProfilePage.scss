@@ -1,3 +1,100 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/typography";
 @import "../../styles/partials/mixins";
+
+.profile{
+    font-family: "EduFoundation";
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    &__container{
+        padding-top: 1rem;
+        display: flex;
+    }
+
+    &__header{
+        width: 12rem;
+        height: 13rem;
+        border-radius: 4px;
+        background-image: url("../../assets/images/profile1.JPG");
+        background-position: center;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-left: 10px solid $secondary-color5;
+        border-right: 10px solid $secondary-color5; 
+        border-top: 8px solid $secondary-color5;
+        box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.60);
+    }
+// $primary-color2;
+    &__frame{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        width: 13rem;
+        background-color: $secondary-color5;
+        border: 2px solid $secondary-color5;
+        box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.60);
+
+        &--inner{
+            background-color: $supporting-color1;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;;
+            width: 12rem;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.20);
+        }
+    }
+
+    &__greeting{
+        color: black;
+        margin: 0;
+        font-weight: 500;
+
+    }
+
+    &__label{
+        font-weight: 600;
+    }
+
+    &__user-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__subheading{
+        background-color: $secondary-color5;
+        color: white;
+        padding-left: 0.5rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    &__description, &__hobby, &__group{
+        padding-left: 1rem;
+    }
+
+    &__hobby, &__group{
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+        width: 9rem;
+    }
+
+    &__interests{
+        margin-right: 1rem;
+    }
+
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+
+}

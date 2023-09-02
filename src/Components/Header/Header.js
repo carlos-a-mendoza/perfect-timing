@@ -1,5 +1,5 @@
 import "./Header.scss";
-import logo from "../../assets/logo/Logo.JPG";
+import logo from "../../assets/images/logo/Logo.JPG";
 
 
 

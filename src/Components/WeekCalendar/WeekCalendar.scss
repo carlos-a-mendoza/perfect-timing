@@ -1,10 +1,25 @@
-.dayofthemonth{
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    width: 2rem;
-    text-align: center;
-}
+@import "../../styles/partials/variables";
+@import "../../styles/partials/typography";
+@import "../../styles/partials/mixins";
 
 .week-calendar{
     display: flex;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+
+    &__day{
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        width: 1.8rem;
+        text-align: center;
+
+        &--today{
+            background-image: url("../../assets/icons/circle.svg");
+            background-position: center;
+            background-repeat: no-repeat;         
+            font-weight: 700;   
+        }
+    }
 }

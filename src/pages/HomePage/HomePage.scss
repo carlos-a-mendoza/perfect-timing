@@ -11,12 +11,18 @@ body{
 a, button{
     cursor: pointer;
     text-decoration: none;
+    color: black;
+
+    &:visited{
+        color: black;
+    }
 }
 
 .home{
-    margin:0;
     padding: 0;
     font-family: "EduFoundation";
+    margin-left: 1rem;
+    margin-right: 1rem;
 
     &__container{
         display: flex;
@@ -30,5 +36,34 @@ a, button{
         text-align: center;
     }
 
+    &__subheading{
+        text-align: center;
+    }
+
+    &__event{
+        margin-bottom: 1rem;
+    }
+
+    &__event-number{
+        margin-right: 1rem;
+        font-size: 1.4rem;
+    }
+
+    &__event-name{
+        font-size: 1rem;
+        font-weight: 600;
+        margin:0;
+    }
+
+    &__event-description{
+        margin-top:0;
+        margin-bottom: 0;
+        margin-left: 2.5rem;
+        font-size: 0.875rem;
+    }
+
+    &__event-label{
+        font-weight: 600;
+    }
     
 }

@@ -24,24 +24,36 @@ function EventList(){
             });
     }, []);
 
+    //Filter events that have passed
+
+    const upcomingEvents = (event) => {
+        const eventDate = new Date(event.event_date);
+        const currentDay = new Date();
+        return eventDate >= currentDay;
+    }
+
+    const onlyUpcomingEvents = allEvents.filter(upcomingEvents)
+
+    console.log(onlyUpcomingEvents)
+
     return(
         <div className="events-page">
             <h1 className="events-page__header" id="events">All Events</h1>
             <article className="events-page__container"> 
                 <p className="events-page__heading">Event Date</p>
                 <p className="events-page__heading">Event Name</p>
-                <p className="events-page__heading">Event Description</p>
+                <p className="events-page__heading events-page__heading--description">Event Description</p>
             </article>
             
-            {allEvents.map((event)=>{
+            {onlyUpcomingEvents.map((event)=>{
                 return(
                     <article key={event.id} className="events-page__wrapper">
-                        <p className="events-page__context">{event.event_date.split("T")[0]}</p>
+                        <p className="events-page__context events-page__context--date">{event.event_date.split("T")[0]}</p>
                         <p className="events-page__context">{event.event_name}</p>
-                        <p className="events-page__context">{event.event_description}</p>
-                        <div className="events-page__wrapper--icons">
+                        <p className="events-page__context events-page__context--description">{event.event_description}</p>
+                        <div className="events-page__wrapper events-page__wrapper--icons">
                             <img src={editIcon} alt="pencil edit icon" className="events-page__icon"/>
-                            <img src={deleteIcon} alt="delete icon" className="events-page__icon"/>
+                            <img src={deleteIcon} alt="delete icon" className="events-page__icon events-page__icon--delete"/>
                         </div>
                     </article>
                 )
