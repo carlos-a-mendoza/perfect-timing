@@ -1,18 +1,13 @@
 import "./DeleteModal.scss";
 import {useState, useEffect} from "react";
 import close from "../../assets/icons/close.svg"
-import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 
 export default function DeleteModal({eventId, eventInfo}) {
     
     const [selectedEvent, setSelectedEvent] = useState(null)
 
-    console.log(eventId)
-    console.log(eventInfo)
-    console.log(selectedEvent);
 
-    // const navigate = useNavigate();
     useEffect(()=>{
         const detailOfEventBeingDeleted = eventInfo.find((deletedEvent)=>deletedEvent.id === eventId)
         setSelectedEvent(detailOfEventBeingDeleted);
@@ -46,7 +41,7 @@ export default function DeleteModal({eventId, eventInfo}) {
             
             <div className="delete__wrapper">
               <div className="delete__subcontainer">
-              <a href="/"><img src={close} alt="X symbol/Exit feature to close pop-up window" className="delete__icon-close"/></a>
+              <a href="/" onClick={handleCancel}><img src={close} alt="X symbol/Exit feature to close pop-up window" className="delete__icon-close"/></a>
             </div>
               <h1 className="delete__heading"> Delete {selectedEvent.event_name} event? </h1>
               <p className="delete__text">

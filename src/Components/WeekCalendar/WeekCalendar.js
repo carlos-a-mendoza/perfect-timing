@@ -3,10 +3,6 @@ import {useState} from 'react';
 
 function WeekCalendar() {
     const [currentDate] = useState(new Date());
-
-  
-  //we want to highlight or indicate today's date
-  //when clicked it will bring the user to the my Calendar page
   
   const weekOverview = [];
 

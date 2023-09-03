@@ -2,15 +2,15 @@ import dayjs from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import "./AddEventForm.scss";
+import "./CreateGroupEvent.scss";
 import {useState} from "react";
 import close from "../../assets/icons/close.svg"
 import {useNavigate} from "react-router-dom";
 import { urlAllEventsByUser } from '../../utils/api-utils';
 import axios from 'axios';
 
-export default function AddEventForm() {
-    const [value, setValue] = useState(dayjs())
+export default function CreateGroupEvent() {
+    const [value, setValue] = React.useState(dayjs())
     const [eventName, setEventName] = useState("");
     const [eventDescription, setEventDescription] = useState("");
     const [eventCategory, setEventCategory] = useState("");

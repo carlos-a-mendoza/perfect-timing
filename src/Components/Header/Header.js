@@ -1,8 +1,6 @@
 import "./Header.scss";
 import logo from "../../assets/images/logo/Logo.JPG";
 
-
-
 function Header () {
     return(
         <div className="header">
