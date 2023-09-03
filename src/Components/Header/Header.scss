@@ -6,6 +6,18 @@
     font-family: "EduFoundation";
     background-color: $secondary-color5;
 
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo{
+        @include tablet{
+            padding-left: 2rem;
+            padding-bottom: 1rem;
+        }
+    }
+
     &__container{
         display: flex;
         justify-content: center;
@@ -20,6 +32,13 @@
         color: $supporting-color1;
         font-size: 1.1rem;;
         font-weight: 700;
+
+        @include tablet{
+            align-items: flex-end;
+            width: 20rem;
+            padding-right: 2rem;
+            padding-bottom: 1rem;
+        }
     }
     
     &__link{

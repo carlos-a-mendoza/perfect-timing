@@ -16,7 +16,6 @@ body{
         position: absolute;
         right: 0.5rem;
         top: 0.5rem;
-        
     }
 
     &__container{
@@ -29,6 +28,7 @@ body{
         border-radius: 4px;
         padding-bottom: 0.5rem;
         position: absolute;
+        z-index: 1;
 
         &--background{
             position: absolute;

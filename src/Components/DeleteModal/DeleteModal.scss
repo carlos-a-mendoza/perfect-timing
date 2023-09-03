@@ -1,0 +1,100 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/typography";
+
+
+.delete{
+    font-family: "TitilliumWeb";
+    color: $supporting-color1;
+    margin:0;
+    padding:0;
+
+    &__subcontainer{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__icon-close{
+        margin-top: 1rem;
+
+        @include tablet{
+            margin-right: 1rem;
+        }
+    }
+
+    &__transparent-container{
+        position: fixed;
+        background-color: $primary-color3;
+        top: 0;
+        background-color: rgba(19,24,44,0.7); //Converted primary color 1 variable
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet{
+            padding-left: 3rem;
+            padding-right: 3rem;
+            position: fixed;
+            align-items: flex-start;
+        }
+
+        @include desktop{
+            padding-left: 19rem;
+            padding-right: 19rem;
+        }
+    }
+
+    &__main-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 17.6875rem;
+        width: 23.4375rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1.5rem;
+        background-color: $secondary-color5;
+        border-radius: 8px;
+
+    }
+
+    &__heading{
+        font-size: 2rem;
+        line-height: 2.25rem;
+        margin-bottom: 1rem;
+        margin-top: 1.5625rem;
+
+    }
+
+    &__text{
+        font-size: 1.2rem;
+        padding-top: 1rem;;
+
+    }
+
+    
+    &__container{
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &__button{
+        background-color: $primary-color3;
+        border: 1px solid $primary-color3;
+        border-radius: 20px;
+        padding: 0.5rem 3.9375rem 0.5rem 3.9375rem;
+        color: $supporting-color1;
+        font-family: "EduFoundation";
+        font-size: 1rem;
+        font-weight: 700;
+        margin-top: 1rem;
+
+        &--delete{
+            color: $supporting-color1;
+
+        }
+    } 
+}

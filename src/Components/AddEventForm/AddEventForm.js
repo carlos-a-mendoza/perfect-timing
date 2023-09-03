@@ -4,7 +4,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import "./AddEventForm.scss";
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import close from "../../assets/icons/close.svg"
 import {useNavigate} from "react-router-dom";
 import { urlAllEventsByUser } from '../../utils/api-utils';
@@ -41,8 +41,6 @@ export default function AddEventForm() {
     const handleCancel = (event) => {
         event.preventDefault();
         window.location.reload();
-        // navigate("/my-calendar")
-
     }
 
 
@@ -69,19 +67,12 @@ export default function AddEventForm() {
                     console.error("Error: Event cannot be created", error)
                     alert("Error: Event Was Not Added")
                 })
-           
+            
+            return window.location.reload();
         } else {
             alert("Failed to upload. All fields required. Please correct errors.")
         }
-
-    
-        // want to make a post request that sends this data and add it on to the table 
-        console.log(JSON.stringify(value));
-        console.log(eventName);
-        console.log(eventDescription);
-        console.log(eventCategory);
        }
-
 
     return (
         <div className="add-event">
@@ -111,11 +102,6 @@ export default function AddEventForm() {
                         <button onClick={handleCancel} className="add-event__button">Cancel</button>
                         <button onClick={handleSubmit} className="add-event__button">Update Schedule</button>
                     </div>
-
-                
-                    {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DatePicker value={value} onChange={(newValue) => setValue(newValue)} />
-                    </LocalizationProvider> */}
                 </article>
             </div>
         </div>
