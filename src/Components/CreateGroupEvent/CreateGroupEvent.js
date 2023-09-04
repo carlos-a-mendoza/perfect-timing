@@ -3,19 +3,89 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import "./CreateGroupEvent.scss";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import close from "../../assets/icons/close.svg"
 import {useNavigate} from "react-router-dom";
 import { urlAllEventsByUser } from '../../utils/api-utils';
 import axios from 'axios';
 
 export default function CreateGroupEvent() {
-    const [value, setValue] = React.useState(dayjs())
+
+    const [value, setValue] = useState(dayjs());
     const [eventName, setEventName] = useState("");
     const [eventDescription, setEventDescription] = useState("");
     const [eventCategory, setEventCategory] = useState("");
+    const [groupMembersWithEvents, setGroupMembersWithEvents] = useState([]);
+    const [daysWithoutEvents, setDaysWithoutEvents] = useState([]);
+    const [groupsInvolvedIn, setGroupsInvolvedIn] = useState([])
+    const [group, setGroup] = useState("")
 
     const navigate = useNavigate();
+    console.log(groupMembersWithEvents)
+    
+
+    function isSameDay(date1, date2) {
+        return (
+            date1.getDate() === date2.getDate() &&
+            date1.getMonth() === date2.getMonth() &&
+            date1.getFullYear() === date2.getFullYear()
+        );
+    }
+
+    useEffect(() => {
+        axios.get('http://localhost:8080/users/usersingroup/friends')
+        .then((response) => {
+            const formattedData = response.data.map((user) => {
+                const eventsWithFormattedDates = user.events.map((event) => {
+                    const formattedDate = new Date(event.event_date);
+                    return { ...event, event_date: formattedDate };
+                });
+                return { ...user, events: eventsWithFormattedDates };
+            });
+            setGroupMembersWithEvents(formattedData);
+        })
+        .catch((error) => {
+            console.error('Error: Unable to obtain group members with events', error);
+        });
+    }, []);
+
+    useEffect(() => {
+        if (groupMembersWithEvents.length === 0) {
+            return; // Return if data not available 
+        }
+
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const allDaysInMonth = [];
+        for (let day = 1; day <= daysInMonth; day++) {
+            allDaysInMonth.push(new Date(year, month, day));
+        }
+    
+        groupMembersWithEvents.forEach((user) => {
+            user.events.forEach((event) => {
+                const eventDate = new Date(event.event_date);
+                const index = allDaysInMonth.findIndex((day) => isSameDay(day, eventDate));
+                if (index !== -1) {
+                    allDaysInMonth.splice(index, 1); 
+                }
+            });
+        });
+    
+        setDaysWithoutEvents(allDaysInMonth);
+    }, [groupMembersWithEvents]);
+
+    useEffect(() =>{
+        axios.get("http://localhost:8080/users/groups/1")
+        .then((response)=>{
+            setGroupsInvolvedIn(response.data)
+        })
+    },[])
+
+    console.log(groupsInvolvedIn)
+
+    console.log(daysWithoutEvents)
 
     const handleEventName = (event) =>{
         setEventName(event.target.value)
@@ -33,15 +103,13 @@ export default function CreateGroupEvent() {
         if (!eventName || !eventDescription || !eventCategory){
             return false;
         }
-
         return true;
     }
 
     const handleCancel = (event) => {
         event.preventDefault();
-        window.location.reload();
+        navigate("/my-calendar");
     }
-
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -67,11 +135,16 @@ export default function CreateGroupEvent() {
                     alert("Error: Event Was Not Added")
                 })
             
-            return window.location.reload();
+            return navigate("/my-calendar");
         } else {
             alert("Failed to upload. All fields required. Please correct errors.")
         }
        }
+    
+    const handleChangeGroup = (event) =>{
+        event.preventDefault();
+        setGroup(event.target.value)
+    }
 
     return (
         <div className="add-event">
@@ -82,6 +155,27 @@ export default function CreateGroupEvent() {
                         <h1 className="add-event__header">Add Event</h1>
                     </div>
                     <div className="add-event__container--content">
+                        <div>
+                            <h2 className="add-event__label">Group Select:</h2>
+                            <select name="group" className="add-event__input" onChange={handleChangeGroup} defaultValue="Best Friends">
+                                {groupsInvolvedIn.map((group, index) =>{
+                                    return <option key={index} value={group.group_name}>{group.group_name}</option>
+                                })}
+                            </select>
+                            {/* <input type="text" name="event_group" className="add-event__input" onChange={handleEventName} value="Best Friends"></input> */}
+                        </div>
+    
+                        <div>
+                            <h2 className="add-event__label">Days Your Group Are Available:</h2>
+                            <div className="add-event__wrapper">
+                                {daysWithoutEvents.map((day)=>{
+                                    return(
+                                        <p className="add-event__date-available" key={day}>{day.getDate()}</p>
+                                    )
+                                })}
+                            </div>
+                        </div>
+
                         <h2 className="add-event__label">Event Name:</h2>
                         <input type="text" name="event_name" className="add-event__input" onChange={handleEventName} value={eventName}></input>
 
@@ -99,7 +193,7 @@ export default function CreateGroupEvent() {
 
                     <div className="add-event__container--button">
                         <button onClick={handleCancel} className="add-event__button">Cancel</button>
-                        <button onClick={handleSubmit} className="add-event__button">Update Schedule</button>
+                        <button onClick={handleSubmit} className="add-event__button">Create Event</button>
                     </div>
                 </article>
             </div>

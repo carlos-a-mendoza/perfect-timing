@@ -7,6 +7,7 @@ import AddEventForm from '../AddEventForm/AddEventForm';
 import axios from "axios";
 import dayjs from "dayjs";
 import ServerDay from "./ServerDay";
+import { useNavigate } from 'react-router-dom';
 
 export default function Calendar() {
 
@@ -17,6 +18,8 @@ export default function Calendar() {
   const showAddEventModal = () =>{
         setShowModal(true);
   }
+
+  const navigate = useNavigate();
 
   const obtainEventData = async () => {
     try{
@@ -52,8 +55,9 @@ export default function Calendar() {
     event.preventDefault();
   }
 
-  if(highlightedDays.length === 0){
-    return <p>Loading...</p>
+  const handleCreateGroupEvent = (event) =>{
+    event.preventDefault();
+    navigate("/group-event");
   }
 
   console.log(highlightedDays)
@@ -75,7 +79,7 @@ export default function Calendar() {
       </LocalizationProvider>
       <div className="calendar__container">
                 <button className="calendar__button" onClick={()=>{showAddEventModal();}}>Add Event</button>
-                <button className="calendar__button">Create Group Event</button>
+                <button className="calendar__button" onClick={handleCreateGroupEvent}>Create Group Event</button>
       </div>
       {showModal && (<AddEventForm/>)}  
     </div>  

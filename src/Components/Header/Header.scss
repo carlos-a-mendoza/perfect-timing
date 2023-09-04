@@ -3,8 +3,8 @@
 @import "../../styles/partials/typography";
 
 .header{
-    font-family: "EduFoundation";
-    background-color: $secondary-color5;
+    font-family: "Mukta";
+    background-color: $primary-color-2;
 
     @include tablet{
         display: flex;
