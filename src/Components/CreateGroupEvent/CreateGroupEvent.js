@@ -1,17 +1,14 @@
 import dayjs from 'dayjs';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import "./CreateGroupEvent.scss";
 import {useState, useEffect} from "react";
 import close from "../../assets/icons/close.svg"
 import {useNavigate} from "react-router-dom";
-import { urlAllEventsByUser } from '../../utils/api-utils';
 import axios from 'axios';
+import Alert from "../Alert/Alert";
 
 export default function CreateGroupEvent() {
 
-    const [value, setValue] = useState(dayjs());
+    const [value, setValue] = useState("");
     const [eventName, setEventName] = useState("");
     const [eventDescription, setEventDescription] = useState("");
     const [eventCategory, setEventCategory] = useState("");
@@ -19,9 +16,11 @@ export default function CreateGroupEvent() {
     const [daysWithoutEvents, setDaysWithoutEvents] = useState([]);
     const [groupsInvolvedIn, setGroupsInvolvedIn] = useState([])
     const [group, setGroup] = useState("")
+    const [message, setMessage] = useState("");
 
     const navigate = useNavigate();
     console.log(groupMembersWithEvents)
+    console.log(value)
     
 
     function isSameDay(date1, date2) {
@@ -122,6 +121,7 @@ export default function CreateGroupEvent() {
                 event_category: eventCategory,
                 user_id: 1,
             }
+            console.log(newEvent)
 
             axios
                 .post("http://localhost:8080/", newEvent)
@@ -132,12 +132,12 @@ export default function CreateGroupEvent() {
                 })
                 .catch((error)=>{
                     console.error("Error: Event cannot be created", error)
-                    alert("Error: Event Was Not Added")
+                    setMessage("Error: Event Was Not Added")
                 })
             
             return navigate("/my-calendar");
         } else {
-            alert("Failed to upload. All fields required. Please correct errors.")
+            setMessage("Failed to upload. All fields required. Please correct errors.")
         }
        }
     
@@ -146,13 +146,21 @@ export default function CreateGroupEvent() {
         setGroup(event.target.value)
     }
 
+    const handleValue=(event) =>{
+        event.preventDefault();
+        const date = dayjs(event.target.value).toDate()
+        console.log(date)
+        setValue(date)
+    }
+
     return (
         <div className="add-event">
+            <Alert message={message} setMessage={setMessage}/>
             <div className="add-event__container--background">
                 <article className="add-event__container">
                     <div className="add-event__container--header">
                         <a href="/my-calendar" className="add-event__close"><img src={close} alt="X symbol to close"/></a>
-                        <h1 className="add-event__header">Add Event</h1>
+                        <h1 className="add-event__header">Create Group Event</h1>
                     </div>
                     <div className="add-event__container--content">
                         <div>
@@ -168,11 +176,23 @@ export default function CreateGroupEvent() {
                         <div>
                             <h2 className="add-event__label">Days Your Group Are Available:</h2>
                             <div className="add-event__wrapper">
-                                {daysWithoutEvents.map((day)=>{
+
+                            <select name="event_date" className="add-event__input" onChange={handleValue}>
+                            
+                                    {daysWithoutEvents.map((day, index)=>{
+                                        const date = new Date(day);
+                                        const dateFormat ={
+                                            month: "long",
+                                            day: "numeric",
+                                            year: "numeric",
+                                        }
+
+                                        const fullDate = date.toLocaleDateString(undefined, dateFormat)
                                     return(
-                                        <p className="add-event__date-available" key={day}>{day.getDate()}</p>
+                                            <option className="add-event__date-available" key={index}>{fullDate}</option>
                                     )
-                                })}
+                                    })}
+                            </select>
                             </div>
                         </div>
 
@@ -182,10 +202,6 @@ export default function CreateGroupEvent() {
                         <h2 className="add-event__label">Description:</h2>
                         <input type="text" name="event_description" className="add-event__input" onChange={handleEventDescription} value={eventDescription}></input>
 
-                        <h2 className="add-event__label add-event__label--date">Date:</h2>
-                        <LocalizationProvider dateAdapter={AdapterDayjs} className="add-event__date">
-                            <DatePicker value={value} onChange={(newValue) => setValue(newValue)} />
-                        </LocalizationProvider>
 
                         <h2 className="add-event__label add-event__label--category">Category:</h2>
                         <input type="text" name="event_category" className="add-event__input" onChange={handleEventCategory} value={eventCategory}></input>

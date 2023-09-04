@@ -12,7 +12,7 @@ body{
 
     &__container{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         margin-left: 1rem;
         margin-right: 1rem;
     }
@@ -31,9 +31,46 @@ body{
     }
 }
 
+.css-nk89i7-MuiPickersCalendarHeader-root {
+
+    @include tablet{
+        max-height: 8rem !important;
+        min-height: 4rem !important;
+        width: 30rem !important;
+    }
+}
+
+.css-1tkx1wf-MuiSvgIcon-root-MuiPickersCalendarHeader-switchViewIcon {
+    @include tablet{
+        display: none !important;
+    }
+}
+
+.css-12p2adl-MuiDayCalendar-monthContainer {
+    @include tablet{}
+}
+
+.css-dplwbx-MuiPickersCalendarHeader-label {
+    // padding-top: 1rem !important;
+    // padding-bottom: 1rem !important;
+    // font-size: 2rem !important;
+
+    @include tablet{
+        margin-left: 1rem;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        font-size: 2rem !important;
+    }
+}
+
 .css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel{
     color: $supporting-color1 !important;
     font-weight: 600 !important;
+
+    @include tablet {
+        font-weight: 700 !important;
+        font-size: 0.91rem !important;
+    }
 }
 
 .css-cwhad8-MuiDateCalendar-root{
@@ -43,10 +80,14 @@ body{
 
 .css-16b5y55-MuiPickersLayout-contentWrapper{
     margin: 0;
+    height: 22rem !important;
 }
 
-.css-qa7bje-MuiButtonBase-root-MuiPickersDay-root:focus.Mui-selected{
-    background-color: $primary-color3;
+.css-qa7bje-MuiButtonBase-root-MuiPickersDay-root {
+    @include tablet{
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+    }
 }
 
 .css-4pax7l-MuiPickersLayout-root .MuiPickersLayout-toolbar, .MuiPickersLayout-actionBar, .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
@@ -54,18 +95,19 @@ body{
 }
 
 .css-nk89i7-MuiPickersCalendarHeader-root {
-    background-color: $primary-color1;
+    background-color: $primary-color-1;
     color: white;
     margin-bottom: 0 !important;
     justify-content: center;
 }
 
 .css-i5q14k-MuiDayCalendar-header {
-    background-color: $primary-color2;
+    background-color: $primary-color-2;
 }
 
 .css-12p2adl-MuiDayCalendar-monthContainer {
-    border: 1px solid $primary-color2;
+    border: 1px solid $primary-color-2;
+
 }
 
 .css-4pax7l-MuiPickersLayout-root .MuiPickersLayout-actionBar{

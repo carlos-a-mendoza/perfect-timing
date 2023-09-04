@@ -76,7 +76,7 @@ export default function AddEventForm() {
     return (
         <div className="add-event">
             <div className="add-event__container--background">
-                <article className="add-event__container">
+                <article className="add-event__container add-event__container--add">
                     <div className="add-event__container--header">
                         <a href="/my-calendar" className="add-event__close"><img src={close} alt="X symbol to close"/></a>
                         <h1 className="add-event__header">Add Event</h1>
@@ -99,7 +99,7 @@ export default function AddEventForm() {
 
                     <div className="add-event__container--button">
                         <button onClick={handleCancel} className="add-event__button">Cancel</button>
-                        <button onClick={handleSubmit} className="add-event__button">Update Schedule</button>
+                        <button onClick={handleSubmit} className="add-event__button">Update</button>
                     </div>
                 </article>
             </div>

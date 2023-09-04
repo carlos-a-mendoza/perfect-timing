@@ -18,27 +18,20 @@ body{
         top: 0.5rem;
     }
 
-    &__wrapper{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
     &__date-available{
         width: 1.7rem;
         height: 1.6rem;
-        margin-right: 0.5rem;;
-        background-color: $primary-color-7;
-        text-align: center;
-        color: $supporting-color1;
-        font-weight: 600;
+        margin-right: 0.5rem;
+        font-weight: 500;
         border-radius: 50%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 
     }
 
     &__container{
         background-color: $supporting-color1;
-        height: 55rem;
+        height: 48rem;
         width: 20rem;
         padding-left: 1rem;
         padding-right: 1rem;
@@ -109,12 +102,20 @@ body{
     }
 
     &__input{
+        font-family: "Mukta";
         margin-top: 0.5rem;
         margin-bottom: 1rem;
         width: 96%;
         padding-top: 0.25rem;
         padding-left: 0.25rem;
         padding-right: 0.25rem;
+        height: 2rem;
+        font-size: 0.9rem;
+        background-color: $supporting-color1;
+
+        &:-internal-autofill-selected{
+            background-color: $supporting-color1 !important;
+        }
     }
 
     &__button{
@@ -127,14 +128,9 @@ body{
         background-color: $primary-color-2;
         color: $supporting-color1;
         font-weight: 550;
-        // letter-spacing: 0.1rem;
     }
 }
 
 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
     margin-bottom: 1rem;
 }
-//this is to edit the event date
-// .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
-//     height: 2rem;
-// } 

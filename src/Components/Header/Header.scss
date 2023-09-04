@@ -2,19 +2,27 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/typography";
 
+a, button {
+    cursor: pointer;
+}
+
 .header{
     font-family: "Mukta";
     background-color: $primary-color-2;
+    border-bottom: 1rem solid $primary-color-7;
+    
 
     @include tablet{
         display: flex;
         justify-content: space-between;
+        border-bottom: 1rem solid $primary-color-7;
+        margin-bottom: 1rem;
     }
 
     &__logo{
         @include tablet{
             padding-left: 2rem;
-            padding-bottom: 1rem;
+            // padding-bottom: 1rem;
         }
     }
 
@@ -37,7 +45,7 @@
             align-items: flex-end;
             width: 20rem;
             padding-right: 2rem;
-            padding-bottom: 1rem;
+            // padding-bottom: 1rem;
         }
     }
     
