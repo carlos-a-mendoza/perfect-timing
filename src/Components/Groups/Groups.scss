@@ -24,7 +24,8 @@
 
     &__members{
         display: flex;
-        width: 3.5rem;
+        flex-wrap: wrap;
+        width: 4rem;
         margin-left: 1rem;
         background-color: $primary-color-9;
         justify-content: center;

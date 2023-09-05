@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+Project Title: Perfect Timing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tech Stack Used:
+-React.js
+-Node.js
+-MUI
+-MySQL
 
-## Available Scripts
+Project Description:
 
-In the project directory, you can run:
+Event Planning made easier. This allows users to "sync" (share calendar data only checks if there is an event) their calendars with friends or colleagues to find a common day that you and the others have nothing planned. Essentially a day where you are all available. This eliminates the time consuming issue of waiting on someone's availability, communication obstacles, etc. 
+Given that it is a digital planner, this can be carried everywhere with you. You can simply update your schedule by adding an event and when submitted will apply a badge on your calendar. Upon loading onto the landing page, the user will see upcoming events which will act as a reminder to the user. 
+Given that it is user data driven. Seed Data are essential to interact with the site if there are minimal users. Check the backend code and refer to migrations and see what data are required for the seed data if you would like to add more.  
 
-### `npm start`
+How to Install and Run the Project:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-once the code is obtained, be sure to npm install the necessary dependencies
+-this project is user data driven meaning it requires user inputs 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+API References:
+- BackEnd API created through MySQL
 
-### `npm test`
+Lessons Learned:
+- Reading MUI documentation and using a component from them is definitely time consuming but exposes you to other tricks that you apply on future projects
+- Styling these MUI components are quite difficult especially when trying to use SASS 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Next Steps:
+- Want to check the availability by hours and time of day
+- Apply a privacy filter that would hide your icon from users that you are not connected with 
+- Apply dark mode
+- Customization of different themes
+- Fix any bugs or errors 

@@ -2,7 +2,7 @@ import "./PeopleYouMayKnow.scss";
 import axios from "axios";
 import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import photo from "../../assets/images/profile7.JPG";
+// import photo from "../../assets/images/profile7.JPG";
 
 function PeopleYouMayKnow () {
 
@@ -13,8 +13,8 @@ function PeopleYouMayKnow () {
         axios.get("http://localhost:8080/users/info")
         .then((response) => {
             const allUsers = response.data;
-            const filteredUsers = allUsers.filter(user => user.id !== 1 && user.id !== 2 && user.id !== 3 && user.id !== 4);
-            const selectUsers = filteredUsers.slice(2,5);
+            const filteredUsers = allUsers.filter(user => user.id !== 1 && user.id !== 2 && user.id !== 3 && user.id !== 4 && user.id !== 10);
+            const selectUsers = filteredUsers.slice(2,6);
 
             setUsers(selectUsers);
         })
@@ -53,8 +53,8 @@ function PeopleYouMayKnow () {
                 {users.map(user =>{
                     return(
                         <article className="connections__user-card" key={user.id}>
-                            {/* <img src={`${user.user_image_url}`} alt={`${user.user_first_name} profile avatar`} className="connections__image"/> */}
-                            <img src={photo} alt={`${user.user_first_name} profile avatar`} className="connections__image"/>
+                            <img src={require(`../../assets${user.user_image_url}`)} alt={`${user.user_first_name} profile avatar`} className="connections__image"/>
+                            {/* <img src={photo} alt={`${user.user_first_name} profile avatar`} className="connections__image"/> */}
                             <p className="connections__name">{user.user_first_name} {user.user_last_name}</p>
                             <button className="connections__button" onClick={handleConnect(user.id)}>Connect</button>
                         </article>
