@@ -1,10 +1,12 @@
 import "./PeopleYouMayKnow.scss";
-import UserCards from "../UserCards/UserCards";
+import axios from "axios";
+import {useState, UseEffect} from "react";
 
 function PeopleYouMayKnow () {
+
     return(
         <div>
-            
+
         </div>
     )
 }

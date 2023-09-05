@@ -20,6 +20,11 @@
         justify-content: flex-start;
         margin-left: 1rem;
         margin-right: 1rem;
+
+        @include tablet{
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
     }
 
     &__heading{
@@ -47,6 +52,8 @@
         
         @include tablet{
             border-top: 1.5px solid $primary-color-2;
+            margin-left: 2rem;
+            margin-right: 2rem;
         }
         
         &--icons{

@@ -5,6 +5,7 @@ import close from "../../assets/icons/close.svg"
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 import Alert from "../Alert/Alert";
+import Header from '../Header/Header';
 
 export default function CreateGroupEvent() {
 
@@ -157,6 +158,7 @@ export default function CreateGroupEvent() {
 
     return (
         <div className="add-event">
+            <Header/>
             <Alert message={message} setMessage={setMessage}/>
             <div className="add-event__container--background">
                 <article className="add-event__container">

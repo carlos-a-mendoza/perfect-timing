@@ -2,6 +2,10 @@
 @import "../../styles/partials/typography";
 @import "../../styles/partials/mixins";
 
+.header{
+    width: 100%;
+}
+
 body{
     box-sizing: border-box;
     margin: 0;
@@ -21,15 +25,15 @@ a, button{
 .home{
     padding: 0;
     font-family: 'Mukta';
-    margin-left: 1rem;
-    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     @include tablet{
-        margin-left: 2rem;
-        margin-right: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
     &__container{

@@ -1,12 +1,9 @@
 import axios from "axios";
 import "./ProfilePage.scss";
 import {useState, useEffect} from "react";
-import profilepic from "../../assets/images/profile1.JPG";
+import Header from "../../Components/Header/Header";
 
 function ProfilePage () {
-
-    //Make a get request to users table
-    //Grab First/ Last Name
 
     const [userInfo, setUserInfo] = useState(null);
 
@@ -34,11 +31,12 @@ function ProfilePage () {
     }
 
     return(
+        <>
+        <Header/>
         <div className="profile">
             <article className="profile__container">
                 <div>
                     <div className="profile__header">
-                        {/* <img src={profilepic} alt="user's profile" className="profile__image"/> */}
                     </div>
                     <div className="profile__frame">
                         <div className="profile__frame--inner profile__frame--inner">
@@ -75,6 +73,7 @@ function ProfilePage () {
                 </div>
             </article>    
         </div>
+    </>                    
     )
 }
 

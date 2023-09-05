@@ -1,11 +1,9 @@
-import AddEventForm from "../../Components/AddEventForm/AddEventForm";
-import Calendar from "../../Components/Calendar/Calendar";
 import "./HomePage.scss";
 import WeekCalendar from "../../Components/WeekCalendar/WeekCalendar";
-import UserCards from "../../Components/PeopleYouMayKnow/PeopleYouMayKnow";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import PeopleYouMayKnow from "../../Components/PeopleYouMayKnow/PeopleYouMayKnow";
+import Header from "../../Components/Header/Header";
 
 function HomePage(){
 
@@ -51,7 +49,11 @@ function HomePage(){
 
 
     return(
+
+        <>
+        <Header/>
         <div className="home">
+            
             <h1 className="home__header">Good Day User!</h1>
             <div className="home__container">
                 <WeekCalendar/>
@@ -89,9 +91,8 @@ function HomePage(){
                     </div>    
                 </div>    
             <PeopleYouMayKnow/>
-
-
         </div>
+        </>
     )
 };
 

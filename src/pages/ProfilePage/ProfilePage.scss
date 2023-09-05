@@ -2,6 +2,10 @@
 @import "../../styles/partials/typography";
 @import "../../styles/partials/mixins";
 
+.header{
+    visibility: visible;
+}
+
 .profile{
     font-family: "Mukta";
     margin-left: 1rem;
