@@ -2,6 +2,7 @@ import axios from "axios";
 import "./ProfilePage.scss";
 import {useState, useEffect} from "react";
 import Header from "../../Components/Header/Header";
+import PeopleYouMayKnow from "../../Components/PeopleYouMayKnow/PeopleYouMayKnow";
 
 function ProfilePage () {
 
@@ -63,7 +64,7 @@ function ProfilePage () {
                         )
                     })}
                 </div>
-                <div>
+                <div className="profile__groups">
                     <h3 className="profile__subheading">Groups:</h3> 
                         {userGroups.map((group)=>{
                             return(
@@ -73,6 +74,7 @@ function ProfilePage () {
                 </div>
             </article>    
         </div>
+        <PeopleYouMayKnow/>
     </>                    
     )
 }

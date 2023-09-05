@@ -1,0 +1,82 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/typography";
+@import "../../styles/partials/mixins";
+
+a, button{
+    cursor: pointer;
+}
+
+.connections{
+    display: flex;
+    flex-direction: column;
+    font-family: "Mukta";
+
+    &__heading{
+        text-align: center;
+        background-color: $primary-color-7;
+        border-radius: 8px;
+        color: $supporting-color1;
+        margin-top: 4rem;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.5rem;;
+
+        @include tablet{
+            width: 90%;
+        }
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-top: 2rem;
+        }
+    }
+
+    &__user-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 10rem;
+        height: 10rem;
+        border: 1px solid $primary-color-2;
+        border-radius: 10px;;
+        padding-bottom: 1rem;
+        padding-top: 2rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-bottom: 2rem;
+
+        @include tablet{
+            margin-right: 2.5rem;
+        }
+    }
+
+    &__image{
+        border-radius: 50%;
+        width: 5rem;
+        object-fit: cover;
+        object-position: center;
+        height: 5rem;
+    }
+    
+    &__button{
+        background-color: $primary-color-2;
+        font-family: "Mukta";
+        border-radius: 12px;
+        color: $supporting-color1;
+        border: 1px solid $primary-color-2;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        width: 5rem;
+    }
+}

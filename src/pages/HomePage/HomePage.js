@@ -89,9 +89,12 @@ function HomePage(){
                             <p className="home__event-description">{onlyUpcomingEvents[5].event_description}</p>
                         </div>
                     </div>    
-                </div>    
-            <PeopleYouMayKnow/>
+                </div>
         </div>
+        <div className="home__subcontainer">
+            <PeopleYouMayKnow/>
+        </div> 
+
         </>
     )
 };

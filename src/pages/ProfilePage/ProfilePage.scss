@@ -72,7 +72,7 @@
     }
 
     &__subheading{
-        background-color: $primary-color-9;
+        background-color: $primary-color-7;
         color: white;
         padding-left: 0.5rem;
         padding-top: 0.25rem;
@@ -92,7 +92,13 @@
 
     &__interests{
         margin-right: 1rem;
+        width: 50%;
     }
+
+    &__groups{
+        width:50%;
+    }
+
 
     &__wrapper{
         display: flex;
