@@ -27,6 +27,11 @@ a, button{
     flex-direction: column;
     align-items: center;
 
+    @include tablet{
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
     &__container{
         display: flex;
         flex-direction: column;
@@ -68,6 +73,10 @@ a, button{
         color: $supporting-color1;
         margin-top: 4rem;
         width: 85%;
+
+        @include tablet{
+            width: 90%;
+        }
     }
 
     &__event{
@@ -82,12 +91,20 @@ a, button{
     &__event-number{
         margin-right: 1rem;
         font-size: 1.4rem;
+
+        @include tablet{
+            margin-right: 0.5rem;
+        }
     }
 
     &__event-name{
         font-size: 1rem;
         font-weight: 600;
         margin:0;
+
+        @include tablet{
+            font-size: 0.8rem;
+        }
     }
 
     &__event-description{

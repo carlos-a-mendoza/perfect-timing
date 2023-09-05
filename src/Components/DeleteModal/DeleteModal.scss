@@ -24,7 +24,6 @@
 
     &__transparent-container{
         position: fixed;
-        background-color: $primary-color3;
         top: 0;
         background-color: rgba(19,24,44,0.7); //Converted primary color 1 variable
         height: 100vh;
@@ -36,8 +35,6 @@
         @include tablet{
             padding-left: 3rem;
             padding-right: 3rem;
-            position: fixed;
-            align-items: flex-start;
         }
 
         @include desktop{
@@ -55,7 +52,7 @@
         padding-left: 1rem;
         padding-right: 1rem;
         padding-bottom: 1.5rem;
-        background-color: $secondary-color5;
+        background-color: $primary-color-2;
         border-radius: 8px;
 
     }
@@ -82,8 +79,8 @@
     }
 
     &__button{
-        background-color: $primary-color3;
-        border: 1px solid $primary-color3;
+        background-color: $primary-color-1;
+        border: 1px solid $primary-color-1;
         border-radius: 20px;
         padding: 0.5rem 3.9375rem 0.5rem 3.9375rem;
         color: $supporting-color1;

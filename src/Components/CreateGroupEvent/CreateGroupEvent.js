@@ -15,12 +15,13 @@ export default function CreateGroupEvent() {
     const [groupMembersWithEvents, setGroupMembersWithEvents] = useState([]);
     const [daysWithoutEvents, setDaysWithoutEvents] = useState([]);
     const [groupsInvolvedIn, setGroupsInvolvedIn] = useState([])
-    const [group, setGroup] = useState("")
+    const [group, setGroup] = useState("Friends")
     const [message, setMessage] = useState("");
 
     const navigate = useNavigate();
     console.log(groupMembersWithEvents)
     console.log(value)
+    console.log(group);
     
 
     function isSameDay(date1, date2) {
@@ -32,7 +33,8 @@ export default function CreateGroupEvent() {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:8080/users/usersingroup/friends')
+        // axios.get('http://localhost:8080/users/usersingroup/friends')
+        axios.get(`http://localhost:8080/users/usersingroup/${group}`)
         .then((response) => {
             const formattedData = response.data.map((user) => {
                 const eventsWithFormattedDates = user.events.map((event) => {
@@ -46,7 +48,7 @@ export default function CreateGroupEvent() {
         .catch((error) => {
             console.error('Error: Unable to obtain group members with events', error);
         });
-    }, []);
+    }, [group]);
 
     useEffect(() => {
         if (groupMembersWithEvents.length === 0) {
@@ -73,7 +75,7 @@ export default function CreateGroupEvent() {
         });
     
         setDaysWithoutEvents(allDaysInMonth);
-    }, [groupMembersWithEvents]);
+    }, [group, groupMembersWithEvents]);
 
     useEffect(() =>{
         axios.get("http://localhost:8080/users/groups/1")

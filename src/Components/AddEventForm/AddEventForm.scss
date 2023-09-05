@@ -54,7 +54,7 @@ body{
         &--header{
             display: flex;
             flex-direction: column;
-            background-color: $primary-color1;
+            background-color: $primary-color-1;
             padding-top: 1.5rem;
             padding-bottom: 1.5rem;
             position: relative;
@@ -62,7 +62,7 @@ body{
 
         &--content{
             padding-top: 2rem;
-            border: 1px solid $primary-color1;
+            border: 1px solid $primary-color-1;
             padding-left: 1rem;
             padding-right: 1rem;
             padding-bottom: 1rem;
@@ -103,12 +103,12 @@ body{
 
     &__button{
         border-radius: 12px;
-        border: 1px solid $primary-color1;
+        border: 1px solid $primary-color-1;
         width: 10rem;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         font-size: 0.875rem;
-        background-color: $primary-color1;
+        background-color: $primary-color-1;
         color: $supporting-color1;
         font-weight: 550;
         // letter-spacing: 0.1rem;

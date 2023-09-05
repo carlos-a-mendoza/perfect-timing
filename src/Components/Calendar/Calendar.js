@@ -8,6 +8,7 @@ import axios from "axios";
 import dayjs from "dayjs";
 import ServerDay from "./ServerDay";
 import { useNavigate } from 'react-router-dom';
+import Groups from "../Groups/Groups";
 
 export default function Calendar() {
 
@@ -81,7 +82,15 @@ export default function Calendar() {
                 <button className="calendar__button" onClick={()=>{showAddEventModal();}}>Add Event</button>
                 <button className="calendar__button" onClick={handleCreateGroupEvent}>Create Group Event</button>
       </div>
+
+      <div>
+          <h2 className="calendar__subheading"> Your Groups:</h2>
+          <Groups/>
+
+      </div>
       {showModal && (<AddEventForm/>)}  
     </div>  
+
+
   );
 }

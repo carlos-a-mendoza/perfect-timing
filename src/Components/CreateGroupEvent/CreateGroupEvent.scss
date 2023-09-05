@@ -41,6 +41,10 @@ body{
         position: absolute;
         z-index: 1;
 
+        @include tablet{
+            width: 25rem;
+        }
+
         &--background{
             position: absolute;
             background-color:  rgba(19,24,44,0.4);

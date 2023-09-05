@@ -4,23 +4,34 @@
 
 .events-page{
     font-family: "Mukta";
-    margin-left: 1rem;
-    margin-right: 1rem;
 
     &__header{
         text-align: center;
         margin-bottom: 0;
+        background-color: $primary-color-7;
+        color: $supporting-color1;
+        border-radius: 8px;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
     &__container{
         display: flex;
         justify-content: flex-start;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
     &__heading{
         width: 25%;
         font-weight: 700;
         margin-bottom: 0.5rem;
+
+        &--date{
+            @include tablet{
+                width: 20%;
+            }
+        }
 
         &--description{
             width: 40%;
@@ -30,12 +41,22 @@
 
     &__wrapper{
         display: flex;
-        border-top: 1px solid $primary-color3;
+        border-top: 1px solid $primary-color-2;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        
+        @include tablet{
+            border-top: 1.5px solid $primary-color-2;
+        }
         
         &--icons{
             margin-left: 0.25rem;
             align-items: center;
             border-top: none;
+
+            @include tablet{
+                margin-left: 0.75rem;
+            }
         }
     }
 
@@ -43,8 +64,18 @@
         font-size: 0.825rem;
         width: 25%;
 
+        @include tablet{
+            font-size: 0.9rem;
+        }
+
         &--date{
             font-weight: 500;
+
+            @include tablet{
+                font-weight: 700;
+                width: 20%;
+                font-size: 0.95rem;
+            }
         }
 
         &--description{
@@ -59,6 +90,10 @@
         height: 3rem;
         &--delete{
             margin-left: 0.25rem;
+            
+            @include tablet{
+                margin-left: 0.75rem;
+            }
         }
     }
 }

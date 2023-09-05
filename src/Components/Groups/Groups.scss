@@ -1,0 +1,38 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/typography";
+
+.group{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: "Mukta";
+
+    &__subcontainer{
+        display: flex;
+    }
+
+    &__heading{
+        margin-bottom: 0;
+        margin-top: 0;
+        background-color: $primary-color-7;
+        color: $supporting-color1;
+        border-radius: 8px;
+        padding-left: 1rem;;
+        font-size: 1.1rem;
+        width: 4.5rem;
+    }
+
+    &__members{
+        display: flex;
+        width: 3.5rem;
+        margin-left: 1rem;
+        background-color: $primary-color-9;
+        justify-content: center;
+        align-items: center;
+        height: 3.5rem;
+        border-radius: 50%;
+        font-size: 0.875rem;
+        color: $primary-color-5;
+        font-weight: 500;
+    }
+}

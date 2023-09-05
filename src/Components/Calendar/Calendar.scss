@@ -19,15 +19,26 @@ body{
 
     &__button{
         border-radius: 12px;
-        border: 1px solid $primary-color3;
+        border: 1px solid $primary-color-1;
         width: 10rem;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         font-size: 0.875rem;
-        background-color: $primary-color3;
+        background-color: $primary-color-1;
         color: $supporting-color1;
         font-weight: 550;
+    }
 
+    &__subheading{
+        margin-top: 3rem;
+        margin-left: 1rem;
+        text-align: center;
+        margin-right: 1rem;
+        background-color: $primary-color-9;
+        border-radius: 8px;
+        padding-bottom: 0.5rem;
+        color: $supporting-color1;
+        font-size: 1.3rem;
     }
 }
 
@@ -36,7 +47,6 @@ body{
     @include tablet{
         max-height: 8rem !important;
         min-height: 4rem !important;
-        width: 30rem !important;
     }
 }
 
@@ -51,15 +61,12 @@ body{
 }
 
 .css-dplwbx-MuiPickersCalendarHeader-label {
-    // padding-top: 1rem !important;
-    // padding-bottom: 1rem !important;
-    // font-size: 2rem !important;
 
     @include tablet{
         margin-left: 1rem;
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
-        font-size: 2rem !important;
+        font-size: 1.3rem !important;
     }
 }
 
@@ -80,7 +87,6 @@ body{
 
 .css-16b5y55-MuiPickersLayout-contentWrapper{
     margin: 0;
-    height: 22rem !important;
 }
 
 .css-qa7bje-MuiButtonBase-root-MuiPickersDay-root {

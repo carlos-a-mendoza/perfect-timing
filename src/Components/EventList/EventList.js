@@ -50,7 +50,7 @@ function EventList(){
         <div className="events-page">
             <h1 className="events-page__header" id="events">All Events</h1>
             <article className="events-page__container"> 
-                <p className="events-page__heading">Event Date</p>
+                <p className="events-page__heading events-page__heading--date">Event Date</p>
                 <p className="events-page__heading">Event Name</p>
                 <p className="events-page__heading events-page__heading--description">Event Description</p>
             </article>
