@@ -38,8 +38,8 @@
         }
 
         @include desktop{
-            padding-left: 19rem;
-            padding-right: 19rem;
+            padding-left: 0rem;
+            padding-right: 0rem;
         }
     }
 
@@ -55,6 +55,10 @@
         background-color: $primary-color-2;
         border-radius: 8px;
 
+        @include desktop{
+            width: 28rem;
+        }
+
     }
 
     &__heading{
@@ -66,8 +70,9 @@
     }
 
     &__text{
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         padding-top: 1rem;;
+        font-weight: 600;
 
     }
 

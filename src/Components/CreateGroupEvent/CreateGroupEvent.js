@@ -183,7 +183,9 @@ export default function CreateGroupEvent() {
 
                             <select name="event_date" className="add-event__input" onChange={handleValue}>
                             
-                                    {daysWithoutEvents.map((day, index)=>{
+                                    {daysWithoutEvents
+                                        .filter((day)=>day >= new Date())
+                                        .map((day, index)=>{
                                         const date = new Date(day);
                                         const dateFormat ={
                                             month: "long",
