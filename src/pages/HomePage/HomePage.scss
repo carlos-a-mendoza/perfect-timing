@@ -45,6 +45,11 @@ a, button{
             align-items: flex-start;
             padding-right: 1.5rem;
             padding-left: 1.5rem;
+
+            @include desktop{
+                width: 45rem;
+                padding-left: 6.5rem;
+            }
         }
 
         &--left{
@@ -66,6 +71,22 @@ a, button{
         padding-right: 1rem;
         padding-left: 1rem;
         text-align: center;
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    &__month{
+        margin-bottom: 0;
+        width: 21.925rem;
+        text-align: center;
+        background-color: $primary-color-9;
+        border-radius: 8px;
+        color: $supporting-color1;
+        margin-bottom: 0.25rem;;
+
+        @include desktop{
+            width: 70rem;
+        }
     }
 
     &__subheading{
@@ -81,6 +102,10 @@ a, button{
         @include tablet{
             width: 90%;
         }
+
+        @include desktop{
+            width: 110rem;
+        }
     }
 
     &__event{
@@ -90,6 +115,14 @@ a, button{
     &__event-date{
         font-weight: 700;
         text-decoration: underline 2px $primary-color-2;
+
+        @include tablet{
+            font-size: 0.9rem;
+        }
+
+        @include desktop{
+            font-size: 1.7rem;
+        }
     }
 
     &__event-number{
@@ -99,6 +132,10 @@ a, button{
         @include tablet{
             margin-right: 0.5rem;
         }
+
+        @include desktop{
+            font-size: 2rem;
+        }
     }
 
     &__event-name{
@@ -107,7 +144,11 @@ a, button{
         margin:0;
 
         @include tablet{
-            font-size: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        @include desktop{
+            font-size: 1.6rem;
         }
     }
 
@@ -116,6 +157,12 @@ a, button{
         margin-bottom: 0;
         margin-left: 2.5rem;
         font-size: 0.875rem;
+        @include tablet{
+            font-size: 0.9rem;
+        }
+        @include desktop{
+            font-size: 1.4rem;
+        }
     }
 
     &__event-label{

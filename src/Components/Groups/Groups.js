@@ -16,6 +16,15 @@ export default function Groups (){
         })
     },[])
 
+    // const handleHover = (event) => {
+    //     event.target.nextSibling.style.visibility = "visible";
+    // }
+
+    // const handleHoverExit = (event) => {
+    //     event.target.nextSibling.style.visibility = "hidden";
+    // }
+    
+
     console.log(groupInfo)
 
     if(!groupInfo){
@@ -29,8 +38,17 @@ export default function Groups (){
                 <div key={group.group_name} className="group__container">
                     <h2 className="group__heading">{group.group_name}:</h2>
                         <div className="group__subcontainer">
-                        {group.users.map((user)=>(
-                           <p key={user.id} className="group__members">{user.user_first_name} {user.user_last_name[0]}.</p> 
+                        {group.users
+                        .filter((user) => user.id !== 1)
+                        .map((user)=>(
+                        <div className="group__subwrapper">
+                            {/* <img src={require(`../../assets${user.user_image_url}`)} alt={`${user.user_first_name} profile avatar`} className="group__member-avatar" onMouseEnter={handleHover} onMouseLeave={handleHoverExit}/> */}
+                            <img src={require(`../../assets${user.user_image_url}`)} alt={`${user.user_first_name} profile avatar`} className="group__member-avatar"/>
+                            {/* < div className="group__name-container"> */}
+                            <p key={user.id} className="group__members">{user.user_first_name} {user.user_last_name[0]}.</p> 
+                            {/* </div> */}
+
+                        </div>
                         ))}
                         </div>
                 </div>

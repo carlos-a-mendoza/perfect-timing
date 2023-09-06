@@ -13,6 +13,7 @@
         border-radius: 8px;
         margin-left: 1rem;
         margin-right: 1rem;
+
     }
 
     &__container{
@@ -25,6 +26,11 @@
             margin-left: 2rem;
             margin-right: 2rem;
         }
+
+        @include desktop{
+            margin-left: 6rem;
+            margin-right: 6rem;
+        }
     }
 
     &__heading{
@@ -32,10 +38,16 @@
         font-weight: 700;
         margin-bottom: 0.5rem;
 
+        
+        @include desktop{
+            font-size: 1.8rem;
+        }
+
         &--date{
             @include tablet{
                 width: 20%;
             }
+            
         }
 
         &--description{
@@ -54,6 +66,12 @@
             border-top: 1.5px solid $primary-color-2;
             margin-left: 2rem;
             margin-right: 2rem;
+        }
+
+        @include desktop{
+            border-top: 2px solid $primary-color-2;
+            margin-left: 6rem;
+            margin-right: 6rem;
         }
         
         &--icons{
@@ -75,6 +93,10 @@
             font-size: 0.9rem;
         }
 
+        @include desktop{
+            font-size: 1.3rem;
+        }
+
         &--date{
             font-weight: 500;
 
@@ -82,6 +104,10 @@
                 font-weight: 700;
                 width: 20%;
                 font-size: 0.95rem;
+            }
+
+            @include desktop{
+            font-size: 1.3rem;
             }
         }
 
@@ -101,6 +127,11 @@
             @include tablet{
                 margin-left: 0.75rem;
             }
+        }
+
+        @include desktop{
+            width: 2rem;
+            height: 3rem;
         }
     }
 }

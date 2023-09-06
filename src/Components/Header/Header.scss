@@ -50,6 +50,9 @@ a, button {
     
     &__link{
 
+        @include desktop{
+            font-size: 1.2rem;
+        }
         &:focus{
             color: $supporting-color1;
         }

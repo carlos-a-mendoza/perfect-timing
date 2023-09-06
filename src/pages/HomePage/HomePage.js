@@ -28,6 +28,7 @@ function HomePage(){
         return eventDate >= currentDay;
     }
 
+
     if(allEvents === null){
         return <p>Loading...</p>
     }
@@ -54,8 +55,9 @@ function HomePage(){
         <Header/>
         <div className="home">
             
-            <h1 className="home__header">Good Day User!</h1>
+            <h1 className="home__header">Good Day Erika!</h1>
             <div className="home__container">
+                <h2 className="home__month">September</h2>
                 <WeekCalendar/>
             </div>
             

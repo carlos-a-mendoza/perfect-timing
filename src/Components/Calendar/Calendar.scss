@@ -13,8 +13,9 @@ body{
     &__container{
         display: flex;
         justify-content: center;
-        margin-left: 1rem;
-        margin-right: 1rem;
+        padding-bottom: 4rem;;
+        // margin-left: 1rem;
+        // margin-right: 1rem;
     }
 
     &__button{
@@ -30,15 +31,15 @@ body{
     }
 
     &__subheading{
-        margin-top: 3rem;
-        margin-left: 1rem;
+        margin: 0rem;
         text-align: center;
-        margin-right: 1rem;
         background-color: $primary-color-9;
         border-radius: 8px;
         padding-bottom: 0.5rem;
         color: $supporting-color1;
         font-size: 1.3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
@@ -122,4 +123,8 @@ body{
 
 .css-flbe84-MuiDayCalendar-weekContainer {
     padding-top: 0.25rem;;
+}
+
+.css-16b5y55-MuiPickersLayout-contentWrapper, .calendar__container{
+    background-color: $primary-color-3 !important;
 }
